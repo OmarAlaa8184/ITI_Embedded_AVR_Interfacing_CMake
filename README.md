@@ -1,1 +1,1 @@
-# ITI_Embedde_AVR_Interfacing_CMake
+# ITI_Embedded_AVR_Interfacing_CMake
