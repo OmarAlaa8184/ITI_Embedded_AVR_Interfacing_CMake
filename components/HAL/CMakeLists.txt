@@ -8,14 +8,16 @@ project(HAL C)
 
 #set compiler
 #find_program(CMAKE_C_COMPILER NAMES avr-gcc PATHS "/usr/bin/")
-#set(CMAKE_C_COMPILER "avr-gcc")
+set(CMAKE_C_COMPILER "avr-gcc")
 
-set(CMAKE_C_COMPILER "/home/omar/x-tools/avr/bin/avr-gcc")
+#set(CMAKE_C_COMPILER "/home/omar/x-tools/avr/bin/avr-gcc")
 
 
 #To set all includes inside directory
 
 set(${PROJECT_NAME}_INCLUDE_DIR 
+    "${CMAKE_CURRENT_SOURCE_DIR}/HKPD/inc"
+    "${CMAKE_CURRENT_SOURCE_DIR}/HLCD/inc"
     "${CMAKE_CURRENT_SOURCE_DIR}/HSEVENSEG/inc"
     "${CMAKE_CURRENT_SOURCE_DIR}/HLED/inc" 
     "${CMAKE_CURRENT_SOURCE_DIR}/HSWITCH/inc" 
@@ -28,7 +30,8 @@ set(${PROJECT_NAME}_INCLUDE_DIR
 #To get all files .c incide directory mentioned 
 
 file(GLOB_RECURSE ${PROJECT_NAME}_SOURCES 
-  
+    "${CMAKE_CURRENT_SOURCE_DIR}/HKPD/src/*.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/HLCD/src/*.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/HSEVENSEG/src/*.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/HLED/src/*.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/HSWITCH/src/*.c"
